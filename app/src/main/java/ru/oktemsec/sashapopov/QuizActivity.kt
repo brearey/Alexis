@@ -29,41 +29,43 @@ class QuizActivity : AppCompatActivity() {
 
         positiveButton.setOnClickListener {
             indexOfQuestion++
-            questionTextView.text = nextQuestion(indexOfQuestion)
             arrayOfAnswers.add(0)
+            questionTextView.text = nextQuestion(indexOfQuestion)
         }
         negativeButton.setOnClickListener {
             indexOfQuestion++
-            questionTextView.text = nextQuestion(indexOfQuestion)
             arrayOfAnswers.add(1)
+            questionTextView.text = nextQuestion(indexOfQuestion)
         }
         difficultButton.setOnClickListener {
             indexOfQuestion++
-            questionTextView.text = nextQuestion(indexOfQuestion)
             arrayOfAnswers.add(2)
+            questionTextView.text = nextQuestion(indexOfQuestion)
         }
     }
 
     private fun nextQuestion(index:Int): String {
+
+        Log.d("brearey", arrayOfAnswers.toString())
+
         val questionRepository = QuestionRepository()
         return if (index < questionRepository.questions.size) questionRepository.questions[index]
         else {
             positiveButton.isEnabled = false
             negativeButton.isEnabled = false
             difficultButton.isEnabled = false
-            Log.d(TAG, arrayOfAnswers.toString())
             return "no questions"
+
+            // TODO: startActivity
         }
     }
 }
 
 class QuestionRepository {
     val questions = arrayOf (
-        "1 Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
-        "2 Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
-        "3 Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
-        "4 Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
-        "5 Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
-        "6 Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
+        "Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?",
+        "Боль в позвоночнике?",
+        "Бледность лица, посинение губ, мочек ушей, ног?",
+        "Повышенная утомляемость, слабость, дрожь в руках?",
     )
 }
