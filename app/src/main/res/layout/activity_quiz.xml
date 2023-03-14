@@ -39,7 +39,7 @@
             android:padding="10dp"
             android:gravity="center"
             android:layout_marginTop="32dp"
-            android:text="Головные боли, головокружения, болевые ощущения в ногах при ходьбе, боли в груди?"
+            android:text="@string/first_question"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24sp"

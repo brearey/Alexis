@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/body"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="32dp"
@@ -104,13 +104,14 @@
 
     <Button
         android:id="@+id/pain_zone"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="244dp"
-        android:background="#00000000"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#10000000"
         android:contentDescription="@string/login_failed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/body"
+        app:layout_constraintEnd_toEndOf="@id/body"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toStartOf="@id/body"
+        app:layout_constraintTop_toTopOf="@id/body"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
