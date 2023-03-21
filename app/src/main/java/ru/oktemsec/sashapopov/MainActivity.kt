@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         val healthButton = findViewById<ImageButton>(R.id.health_button)
         val sosButton = findViewById<ImageButton>(R.id.sos_button)
+        val prostudaButton = findViewById<ImageButton>(R.id.prostuda_cat)
 
         healthButton.setOnClickListener {
             startActivity(Intent(this@MainActivity, PainZoneActivity::class.java))
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         sosButton.setOnClickListener {
             call()
+        }
+
+        prostudaButton.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ProstudaActivity::class.java))
         }
 
     }

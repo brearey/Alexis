@@ -24,11 +24,11 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/heart_cat_button"
+                android:id="@+id/prostuda_cat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/button1"
+                android:background="@drawable/prostuda_cat"
                 android:contentDescription="heart_cat_button" />
             <ImageButton
                 android:id="@+id/leather_cat_button"
