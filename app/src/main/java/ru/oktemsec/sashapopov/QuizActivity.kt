@@ -97,7 +97,7 @@ class QuizActivity : AppCompatActivity() {
             )
             val maxIdx = agentsList.indices.maxBy { agentsList[it] }
             Toast.makeText(this, "Ваш результат:\nБольшая вероятность что у вас: ${painsList[maxIdx]}", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this, MapActivity::class.java))
+            startActivity(Intent(this, MeningitActivity::class.java))
 
             return Question(questionText = "Вопросы закончились", painORVI = 0, painMeningit = 0, painORZ = 0, painNevralgia = 0, highTemp = false)
         }
