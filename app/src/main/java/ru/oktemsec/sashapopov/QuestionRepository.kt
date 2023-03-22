@@ -180,4 +180,23 @@ class QuestionRepository {
             highTemp = false
         ),
     )
+
+    val meningitSimpleQuestions = arrayOf(
+        SimpleQuestion("Чувство жара?"),
+        SimpleQuestion("Боль в височной или лобной области?"),
+        SimpleQuestion("Пульсирующая боль?"),
+        SimpleQuestion("Боль увеличивается при физических нагрузках?"),
+        SimpleQuestion("Повышенная чувствительность к свету?"),
+        SimpleQuestion("Тошнота?"),
+    )
+
+    val gastritSimpleQuestions = arrayOf(
+        SimpleQuestion("Резкие боли в области солнечного сплетения?"),
+        SimpleQuestion("Усиливающая боль  при приеме пищи?"),
+        SimpleQuestion("Изжога?"),
+        SimpleQuestion("Частое сердцебиение?"),
+        SimpleQuestion("Головокружение?"),
+        SimpleQuestion("Сильная жажда?"),
+        SimpleQuestion("Частое выделение газов?"),
+    )
 }

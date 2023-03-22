@@ -3,23 +3,10 @@ package ru.oktemsec.sashapopov
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 
 class QuizActivity : AppCompatActivity() {
-
-    private val TAG = QuizActivity::class.java.simpleName
-
-    // Agents
-    private var agentsOfPainORVI: Int = 0
-    private var agentsOfPainMeningit: Int = 0
-    private var agentsOfPainORZ: Int = 0
-    private var agentsOfPainNevralgia: Int = 0
-
-    // High temp
-    private var highTemp = false
 
     // object of Question Repo
     private val questionRepository = QuestionRepository()
@@ -33,6 +20,9 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
+        //Get intent type of pain zone
+        val painZone = intent.getStringExtra("painZone")!!
+
         questionTextView = findViewById(R.id.question_tv)
         positiveButton = findViewById(R.id.positive_button)
         negativeButton = findViewById(R.id.negative_button)
@@ -40,66 +30,56 @@ class QuizActivity : AppCompatActivity() {
 
         var indexOfQuestion = 0
 
+        //generate first question
+        val oneQuestion = nextQuestion(indexOfQuestion, painZone)
+        questionTextView.text = oneQuestion.questionText
+
         positiveButton.setOnClickListener {
             if (indexOfQuestion == 0) {
-                highTemp = true
-                questionTextView.text = nextQuestion(indexOfQuestion).questionText
+                questionTextView.text = nextQuestion(indexOfQuestion, painZone).questionText
             } else {
-                val oneQuestion = nextQuestion(indexOfQuestion)
-                agentsOfPainORVI += oneQuestion.painORVI
-                agentsOfPainMeningit += oneQuestion.painMeningit
-                agentsOfPainORZ += oneQuestion.painORZ
-                agentsOfPainNevralgia += oneQuestion.painNevralgia
+                val oneQuestion = nextQuestion(indexOfQuestion, painZone)
 
                 questionTextView.text = oneQuestion.questionText
-
-                // For debug
-                Log.d("brearey", "Агенты ОРВИ: $agentsOfPainORVI")
-                Log.d("brearey", "Агенты Менингита: $agentsOfPainMeningit")
-                Log.d("brearey", "Агенты ОРЗ: $agentsOfPainORZ")
-                Log.d("brearey", "Агенты Невралгии: $agentsOfPainNevralgia")
             }
             indexOfQuestion++
         }
         negativeButton.setOnClickListener {
             if (indexOfQuestion == 0) {
-                highTemp = false
-                questionTextView.text = nextQuestion(indexOfQuestion).questionText
+                questionTextView.text = nextQuestion(indexOfQuestion, painZone).questionText
             } else {
-                questionTextView.text = nextQuestion(indexOfQuestion).questionText
+                questionTextView.text = nextQuestion(indexOfQuestion, painZone).questionText
             }
             indexOfQuestion++
         }
         difficultButton.setOnClickListener {
             indexOfQuestion++
-            questionTextView.text = nextQuestion(indexOfQuestion).questionText
+            questionTextView.text = nextQuestion(indexOfQuestion, painZone).questionText
         }
     }
 
-    private fun nextQuestion(index:Int): Question {
-        val questions = emptyList<Question>().toMutableList()
-        questionRepository.questions.forEach {
-            if (it.highTemp == highTemp) questions += it
+    private fun nextQuestion(index:Int, painZone:String): SimpleQuestion {
+        val questions = emptyList<SimpleQuestion>().toMutableList()
+
+        if (painZone == "meningit") {
+                questionRepository.meningitSimpleQuestions.forEach {
+                questions += it
+            }
+        } else if (painZone == "gastrit") {
+            questionRepository.gastritSimpleQuestions.forEach {
+                questions += it
+            }
         }
+
         return if (index < questions.size) questions[index]
         else {
             positiveButton.isEnabled = false
             negativeButton.isEnabled = false
             difficultButton.isEnabled = false
 
-            // TODO: startActivity
-            val painsList = listOf("ОРВИ", "Менингит", "ОРЗ", "Невралгия")
-            val agentsList = listOf(
-                agentsOfPainORVI,
-                agentsOfPainMeningit,
-                agentsOfPainORZ,
-                agentsOfPainNevralgia
-            )
-            val maxIdx = agentsList.indices.maxBy { agentsList[it] }
-            Toast.makeText(this, "Ваш результат:\nБольшая вероятность что у вас: ${painsList[maxIdx]}", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, MeningitActivity::class.java))
 
-            return Question(questionText = "Вопросы закончились", painORVI = 0, painMeningit = 0, painORZ = 0, painNevralgia = 0, highTemp = false)
+            return SimpleQuestion(questionText = "Вопросы закончились")
         }
     }
 }
