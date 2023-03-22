@@ -77,7 +77,11 @@ class QuizActivity : AppCompatActivity() {
             negativeButton.isEnabled = false
             difficultButton.isEnabled = false
 
-            startActivity(Intent(this, MeningitActivity::class.java))
+            if (painZone == "meningit") {
+                startActivity(Intent(this, MeningitActivity::class.java))
+            } else if (painZone == "gastrit") {
+                startActivity(Intent(this, GastritActivity::class.java))
+            }
 
             return SimpleQuestion(questionText = "Вопросы закончились")
         }

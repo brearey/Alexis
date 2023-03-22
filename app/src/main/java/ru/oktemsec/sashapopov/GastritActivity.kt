@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class MeningitActivity : AppCompatActivity() {
+class GastritActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_meningit)
+        setContentView(R.layout.activity_gastrit)
 
-        val gotomapButton: Button = findViewById<Button>(R.id.meningit_gotomap)
-        val backButton: Button = findViewById<Button>(R.id.meningit_backButton)
+        val gotomapButton: Button = findViewById<Button>(R.id.gastrit_gotomap)
+        val backButton: Button = findViewById<Button>(R.id.gastrit_backButton)
 
         gotomapButton.setOnClickListener {
             startActivity(Intent(this, MapActivity::class.java))

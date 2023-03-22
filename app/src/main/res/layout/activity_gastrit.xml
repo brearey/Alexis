@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/meningit_bg"
-    tools:context=".MeningitActivity">
+    tools:context=".GastritActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/meningit_imageView"
+                android:id="@+id/gastrit_imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -30,7 +30,7 @@
                 app:srcCompat="@drawable/bg_blue_rectangle" />
 
             <TextView
-                android:id="@+id/meningit_textView"
+                android:id="@+id/gastrit_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -38,69 +38,69 @@
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/meningit_imageView"
-                app:layout_constraintEnd_toEndOf="@+id/meningit_imageView"
-                app:layout_constraintStart_toStartOf="@+id/meningit_imageView"
-                app:layout_constraintTop_toTopOf="@+id/meningit_imageView" />
+                app:layout_constraintBottom_toBottomOf="@+id/gastrit_imageView"
+                app:layout_constraintEnd_toEndOf="@+id/gastrit_imageView"
+                app:layout_constraintStart_toStartOf="@+id/gastrit_imageView"
+                app:layout_constraintTop_toTopOf="@+id/gastrit_imageView" />
 
             <ImageView
-                android:id="@+id/meningit_imageView2"
+                android:id="@+id/gastrit_imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/meningit_imageView"
-                app:srcCompat="@drawable/what_is_meningit" />
+                app:layout_constraintTop_toBottomOf="@+id/gastrit_imageView"
+                app:srcCompat="@drawable/what_is_gastrit" />
 
             <TextView
-                android:id="@+id/meningit_textView2"
+                android:id="@+id/gastrit_textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxWidth="250dp"
-                android:text="Что такое менингит"
+                android:text="Что такое гастрит"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/meningit_imageView2"
-                app:layout_constraintEnd_toEndOf="@+id/meningit_imageView2"
-                app:layout_constraintStart_toStartOf="@+id/meningit_imageView2"
-                app:layout_constraintTop_toTopOf="@+id/meningit_imageView2" />
+                app:layout_constraintBottom_toBottomOf="@+id/gastrit_imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/gastrit_imageView2"
+                app:layout_constraintStart_toStartOf="@+id/gastrit_imageView2"
+                app:layout_constraintTop_toTopOf="@+id/gastrit_imageView2" />
 
             <ImageView
-                android:id="@+id/meningit_imageView3"
+                android:id="@+id/gastrit_imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/meningit_imageView2"
+                app:layout_constraintTop_toBottomOf="@id/gastrit_imageView2"
                 app:srcCompat="@drawable/bg_blue_rectangle" />
 
             <TextView
-                android:id="@+id/meningit_textView3"
+                android:id="@+id/gastrit_textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:maxWidth="350dp"
-                android:text="Менингит – это воспаление оболочек головного мозга, развивающееся в результате бактериальной, вирусной или грибковой инфекции..."
+                android:text="Гастрит — это общий термин, объединяющий несколько патологических состояний, для которых характерны воспаление и дистрофия..."
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/meningit_imageView3"
-                app:layout_constraintEnd_toEndOf="@+id/meningit_imageView3"
-                app:layout_constraintStart_toStartOf="@+id/meningit_imageView3"
-                app:layout_constraintTop_toTopOf="@+id/meningit_imageView3" />
+                app:layout_constraintBottom_toBottomOf="@+id/gastrit_imageView3"
+                app:layout_constraintEnd_toEndOf="@+id/gastrit_imageView3"
+                app:layout_constraintStart_toStartOf="@+id/gastrit_imageView3"
+                app:layout_constraintTop_toTopOf="@+id/gastrit_imageView3" />
 
             <ImageView
-                android:id="@+id/meningit_imageView4"
+                android:id="@+id/gastrit_imageView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/meningit_imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/gastrit_imageView3"
                 app:srcCompat="@drawable/bolnitsy" />
 
             <LinearLayout
@@ -111,7 +111,7 @@
                 android:paddingEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/meningit_imageView4">
+                app:layout_constraintTop_toBottomOf="@id/gastrit_imageView4">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/meningit_gotomap"
+                        android:id="@+id/gastrit_gotomap"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
@@ -144,7 +144,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/meningit_backButton"
+                        android:id="@+id/gastrit_backButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
